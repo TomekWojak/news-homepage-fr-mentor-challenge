@@ -10,4 +10,208 @@ html {
 
 body {
   background-color: hsl(36, 100%, 99%);
+  font-family: "Inter", sans-serif;
+}
+
+.wrapper {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+.overlay.active {
+  display: block;
+}
+
+.nav {
+  position: relative;
+}
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+.nav__links-desktop {
+  display: none;
+}
+.nav__links-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  transform: translateX(150%);
+  background-color: hsl(36, 100%, 99%);
+  box-shadow: 3px 3px 5px rgba(46, 46, 46, 0.1803921569);
+  z-index: 210;
+  transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.nav__links-mobile.active {
+  transform: translateX(0);
+}
+.nav__link {
+  display: block;
+  text-decoration: none;
+  color: hsl(240, 100%, 5%);
+  font-size: 2.3rem;
+  transition: color 0.3s;
+}
+.nav__link:hover {
+  color: hsl(5, 85%, 63%);
+}
+.nav__logo {
+  padding: 1em;
+  z-index: 200;
+}
+.nav__burger-btn {
+  position: absolute;
+  padding: 1em;
+  top: 1.7em;
+  right: 2em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: none;
+  z-index: 250;
+}
+.nav__burger-btn:focus-visible {
+  border: 1px solid hsl(240, 100%, 5%);
+}
+.nav__burger-btn-box {
+  position: relative;
+  width: 50px;
+  height: 30px;
+}
+.nav__burger-btn-bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: hsl(240, 100%, 5%);
+  transition: transform 0.3s, opacity 0.2s;
+}
+.nav__burger-btn-bar--top {
+  top: 0;
+}
+.nav__burger-btn-bar--middle {
+  top: 12px;
+}
+.nav__burger-btn-bar--bottom {
+  top: 24px;
+}
+
+.header .line {
+  position: relative;
+  width: 100%;
+  margin: 5em auto;
+  background-color: hsl(233, 8%, 79%);
+  height: 1px;
+}
+.header .circle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  aspect-ratio: 1;
+  background-color: hsl(35, 77%, 62%);
+}
+.header .circle--left {
+  left: 6em;
+}
+.header .circle--right {
+  right: 6em;
+}
+.header .wrapper {
+  padding: 1em 2em;
+}
+.header__img {
+  width: 100%;
+}
+.header__content-left {
+  margin-block-end: 6em;
+}
+.header__content-left-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: hsl(240, 100%, 5%);
+  padding: 1em 0;
+}
+.header__content-left-info {
+  font-size: 1.6rem;
+  line-height: 25px;
+  font-weight: 500;
+  color: hsl(236, 13%, 42%);
+}
+.header__btn {
+  display: block;
+  padding: 1em 2em;
+  margin-block-start: 1.5em;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: hsl(240, 100%, 5%);
+  border: none;
+  background-color: hsl(5, 85%, 63%);
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+.header__btn:hover {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+}
+.header__content-right {
+  padding: 3em;
+  background-color: hsl(240, 100%, 5%);
+}
+.header__content-right-main-title {
+  font-size: 3rem;
+  color: hsl(35, 77%, 62%);
+  margin-block-end: 0.5em;
+}
+.header__content-right-title {
+  font-size: 1.7rem;
+  color: hsl(36, 100%, 99%);
+  margin-block-end: 0.8em;
+}
+.header__content-right-text {
+  font-size: 1.5rem;
+  color: hsl(233, 8%, 79%);
+  font-weight: 400;
+}
+
+.nav__burger-btn[aria-expanded=true] .nav__burger-btn-bar--top {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.nav__burger-btn[aria-expanded=true] .nav__burger-btn-bar--bottom {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+.nav__burger-btn[aria-expanded=true] .nav__burger-btn-bar--middle {
+  opacity: 0;
+}
+
+@media (400px <= width) {
+  .nav__links-mobile {
+    width: 300px;
+    align-items: flex-start;
+  }
+  .nav__link {
+    padding-inline-start: 1em;
+  }
 }/*# sourceMappingURL=style.css.map */
