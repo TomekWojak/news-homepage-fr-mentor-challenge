@@ -57,7 +57,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 3em;
+        gap: 3.5em;
         transform: translateX(150%);
         background-color: $white;
         box-shadow: 3px 3px 5px #2e2e2e2e;
@@ -242,7 +242,7 @@ body {
             align-items: flex-start;
         }
         &__link {
-            padding-inline-start: 1em;
+            padding-inline-start: 1.5em;
         }
     }
 }
@@ -250,5 +250,38 @@ body {
 
 
 @media(576px <= width) {
-    
+    .header {
+        &__content-left-title {
+            font-size: 2rem;
+        }
+        &__content-left-info {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+
+@media(768px <= width) {
+    .nav {
+
+        &__burger-btn {
+            display: none;
+        }
+        &__links-desktop {
+            display: flex;
+            align-items: center;
+        }
+        &__link {
+            color: $darkBlue;
+            font-size: 1.8rem;
+        }
+    }
+
+    .header {
+        .wrapper {
+            padding: 3em 2em;
+        }
+
+        
+    }
 }
